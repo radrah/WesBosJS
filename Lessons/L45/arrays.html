@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title></title>
+
+  <link rel="stylesheet" href="base.css">
+</head>
+
+<body>
+  <script>
+    const name = ['wes', 'rad', 'kait', 'snickers']
+    // name.reverse()
+    console.log(name)
+
+    const sliced_name = name.slice(1,2);
+    console.log(sliced_name)
+    
+    const nameReversed = [...name]
+    nameReversed.reverse()
+    
+    name.push('lux')
+    const name2 = [...name, 'pex']
+    name2.unshift('poppy')
+    console.log(name2)
+    name2.splice(3,2)
+    console.log(name2)
+
+    const bikes = ['bianchi', 'miele', 'panasonic', 'miyata'];
+
+    const newBikes = [
+      ...bikes.slice(0,2),
+      'benotto',
+      ...bikes.slice(2)
+    ]
+
+    const newbikes2 = [
+      ...newBikes.slice(0,3),
+      ...newBikes.slice(4)
+    ]
+
+    const comments = [
+    {text: 'col', id: 001},
+    {text: 'cool', id: 002},
+    {text: 'coool', id: 003},
+    {text: 'cooool', id: 004},
+    {text: 'coooool', id: 005}
+    ]
+
+    function unwantedIndex(unwantedName) {
+      return name.findIndex(name => name === unwantedName)
+    }
+    const unwantedName = unwantedIndex('kait')
+    console.log(name)
+    const newName = [
+      ...name.slice(0,unwantedName),
+      ...name.slice(unwantedName+1)
+    ]
+    console.log(newName)
+
+    // name.splice(unwantedName,1)
+    // console.log(name)
+    function deleteComment(id, comments){
+      const commentIndex = comments.findIndex(comments => comments.id === 003)
+      const newComments = [
+        ...comments.slice(0, commentIndex),
+        ...comments.slice(commentIndex+1)
+      ]
+      return newComments
+    }
+    
+    console.log(deleteComment(001, comments))
+    
+  </script>
+</body>
+
+</html>
