@@ -150,24 +150,60 @@ console.log(newToppingsWithSpread)
     */
 
     // find the first rating that talks about a burger with find()
-    const findBurgRating = (singleFeedback) => {
-      return singleFeedback.comment.includes('burg')
+    function findByWord(word) {
+      return function (singleFeedback){
+        return singleFeedback.comment.includes(word)
+      }
     }
 
-    const burgRating = feedback.find(findBurgRating)
-    console.log(burgRating)
+    // const findBurgRating = (singleFeedback) => {
+    //   return singleFeedback.comment.includes('like')
+    // }
+
+    // const promptForWord = findByWord(prompt('Which word are you looking for?'))
+    // const burgRating = feedback.find(promptForWord)
+    // console.log(burgRating)
 
     // find all ratings that are above 2 with filter()
-      
+    const goodReviewsOnly = feedback.filter(singleFeedback => { return singleFeedback.rating >2})
+
+    console.table(goodReviewsOnly)
 
     // find all ratings that talk about a burger with filter()
+    const burgRatings = feedback.filter(findByWord('burg'))
+    console.log(burgRatings)
+    
     // Remove the one star rating however you like!
+    const legitRatings = feedback.filter(singleFeedback => {return singleFeedback.rating <= 1})
+    console.log(legitRatings)
+    feedback.pop(legitRatings)
+    console.log(feedback)
 
     // check if there is at least 5 of one type of meat with some()
+      const isThereEnoughOfAtLeastOneMeat = Object.values(meats).some(meatValue => 
+      meatValue >= 5)
+      console.log(isThereEnoughOfAtLeastOneMeat)
+
     // make sure we have at least 3 of every meat with every()
+    const isThereAtLeast3OfOneMeat = Object.values(meats).every(meatValue => 
+      meatValue >= 3)
+    console.log(isThereAtLeast3OfOneMeat)
+
     // sort the toppings alphabetically with sort()
+      console.log(toppings.sort())
+
     // sort the order totals from most expensive to least with .sort()
+    const sortedOrderTotals = orderTotals.sort((one, two) => { return one - two })
+    console.log(sortedOrderTotals)
+
     // Sort the prices with sort()
+    const sortedPrices = Object.entries(prices).sort(function(a, b){
+      const aPrice = a[1]
+      const bPrice = b[1]
+      return aPrice - bPrice
+      debugger
+    })
+    console.table(sortedPrices)
 
     /*
       Looping Methods (next)
