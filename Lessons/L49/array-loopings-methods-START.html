@@ -129,10 +129,40 @@
       Looping Methods
     */
 
-    const logTopping = (topping) => {
-      console.log(topping)
+    // const logTopping = (topping, index, array) => {
+    //   //log topping
+    //   if (index < array.length){
+    //   console.log(topping)}
+
+    //   //log previous topping
+    //   if (index == 0){
+    //     console.log('Previous Item: No previous item')
+    //   }
+    //   else {console.log('Previous Item:', array[index - 1])}
+
+    //   //log next topping
+    //   //log goodbye, if its the last toppiing
+    //   if (index == array.length -1) {console.log('This is the last item. GOODBYE')
+    //   }
+    //   else {console.log('Next Item:', array[index + 1])}
+      
+    // }
+
+    const logTopping = (topping, index, array) => {
+      const prevItem = array[index - 1]
+      const nextItem = array[index + 1]
+
+      //log topping
+      console.log(topping) ;
+
+      //log previous item
+      prevItem ? console.log('Previous Item:', prevItem) : console.log('No previous item'); 
+
+      //log next item
+      nextItem ? console.log('Next Item:', nextItem) : console.log('Last item, GOODBYE');
     }
-    console.log(toppings.forEach(logTopping))
+
+    toppings.forEach(logTopping)
 
   </script>
 </body>
