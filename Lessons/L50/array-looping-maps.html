@@ -193,6 +193,18 @@
     const orderTotalsWithTax = orderTotals.map(total => Math.ceil(total * 1.13))
     console.log(orderTotalsWithTax)
 
+    const cleanPeople = people.map(person => {
+      const birthday = new Date(person.birthday).getTime()
+      const now  = Date.now()
+      const age = Math.floor((now - birthday) / 31536000000)
+      
+      return {
+        age: age,
+        name: `${person.names.first} ${person.names.last}`
+      }
+    })
+    console.log(cleanPeople)
+
   </script>
 </body>
 
