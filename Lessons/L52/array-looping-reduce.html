@@ -213,7 +213,24 @@
     // const student = students.find(stud => stud.id === '565a');
     // console.log(student)
 
-      orderTotals.reduce(total)
+    function tallynumbers(tally, currentTotal){
+      console.log(`The current tally is ${tally}`)
+      console.log(`The current total is ${currentTotal}`)
+      console.log('-----------------------------------')
+      return tally + currentTotal
+    }
+    const allOrders = orderTotals.reduce(tallynumbers, 0)
+    console.log(allOrders)
+
+    function inventoryReducer(totalInventory, individualInventory){
+      console.log(`The price of ${individualInventory.type} is ${individualInventory.price}`)
+      console.log(`The current total price is ${totalInventory}`)
+      console.log(`=================================`)
+      return totalInventory + individualInventory.price
+    }
+
+    const inventoryCount = inventory.reduce(inventoryReducer, 0)
+    console.log(inventoryCount)
 
   </script>
 </body>
