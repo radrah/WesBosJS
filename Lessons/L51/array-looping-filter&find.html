@@ -129,69 +129,69 @@
       Looping Methods
     */
 
-    const logTopping = (topping, index, array) => {
-      //log topping
-      if (index < array.length){
-      console.log(topping)}
+    // const logTopping = (topping, index, array) => {
+    //   //log topping
+    //   if (index < array.length){
+    //   console.log(topping)}
 
-      //log previous topping
-      if (index == 0){
-        console.log('Previous Item: No previous item')
-      }
-      else {console.log('Previous Item:', array[index - 1])}
+    //   //log previous topping
+    //   if (index == 0){
+    //     console.log('Previous Item: No previous item')
+    //   }
+    //   else {console.log('Previous Item:', array[index - 1])}
 
-      //log next topping
-      //log goodbye, if its the last toppiing
-      if (index == array.length -1) {console.log('This is the last item. GOODBYE')
-      }
-      else {console.log('Next Item:', array[index + 1])}
+    //   //log next topping
+    //   //log goodbye, if its the last toppiing
+    //   if (index == array.length -1) {console.log('This is the last item. GOODBYE')
+    //   }
+    //   else {console.log('Next Item:', array[index + 1])}
       
-    }
+    // }
 
-    const logTopping2 = (topping, index, array) => {
-      const prevItem = array[index - 1]
-      const nextItem = array[index + 1]
+    // const logTopping2 = (topping, index, array) => {
+    //   const prevItem = array[index - 1]
+    //   const nextItem = array[index + 1]
 
-      //log topping
-      console.log(topping) ;
+    //   //log topping
+    //   console.log(topping) ;
 
-      //log previous item
-      prevItem ? console.log('Previous Item:', prevItem) : console.log('No previous item'); 
+    //   //log previous item
+    //   prevItem ? console.log('Previous Item:', prevItem) : console.log('No previous item'); 
 
-      //log next item
-      nextItem ? console.log('Next Item:', nextItem) : console.log('Last item, GOODBYE');
-    }
+    //   //log next item
+    //   nextItem ? console.log('Next Item:', nextItem) : console.log('Last item, GOODBYE');
+    // }
 
-    toppings.forEach(logTopping2)
+    // toppings.forEach(logTopping2)
 
-    //maps
-    console.clear()
+    // //maps
+    // console.clear()
 
-    function addArms(face){
-      return ` 👋 ${face} 👋 `
-    }
+    // function addArms(face){
+    //   return ` 👋 ${face} 👋 `
+    // }
 
-    const toys = faces.map(addArms)
+    // const toys = faces.map(addArms)
 
-    console.log(toys)
+    // console.log(toys)
 
-    const bosify = (name) => {
-      return `${name} Bos`
-    }
+    // const bosify = (name) => {
+    //   return `${name} Bos`
+    // }
 
-    const capitalize = (word) => {
+    // const capitalize = (word) => {
       
-      return word[0].toUpperCase()+word.slice(1)
-    }
+    //   return word[0].toUpperCase()+word.slice(1)
+    // }
 
-    const fullNames = ['wes', 'kait', 'poppy']
-    const bosified = fullNames.map(bosify)
-    console.log(bosified)
-    const capitalized = bosified.map(capitalize)
-    console.log(capitalized)
+    // const fullNames = ['wes', 'kait', 'poppy']
+    // const bosified = fullNames.map(bosify)
+    // console.log(bosified)
+    // const capitalized = bosified.map(capitalize)
+    // console.log(capitalized)
 
-    const orderTotalsWithTax = orderTotals.map(total => Math.ceil(total * 1.13))
-    console.log(orderTotalsWithTax)
+    // const orderTotalsWithTax = orderTotals.map(total => Math.ceil(total * 1.13))
+    // console.log(orderTotalsWithTax)
 
     const cleanPeople = people.map(person => {
       const birthday = new Date(person.birthday).getTime()
@@ -207,7 +207,11 @@
 
     const over40 = cleanPeople.filter(person => person.age > 40);
     console.table(over40)
+    over40 ? console.log('There are some people over 40') : '';
 
+
+    const student = students.find(stud => stud.id === id);
+    console.log(student)
 
   </script>
 </body>
