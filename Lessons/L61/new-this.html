@@ -9,6 +9,8 @@
 </head>
 
 <body>
+  <button class="one">Button 1</button>
+  <button class="two">Button 2</button>
 <script>
   const  myDate = new Date('August 11, 2023')
   console.log(myDate)
@@ -25,7 +27,18 @@
   }
   const pepperoniPizza = new pizza()
   console.log(pepperoniPizza)
+  console.log(pepperoniPizza instanceof pizza)
 
+  const button1 = document.querySelector('.one')
+  const button2 = document.querySelector('.two')
+
+  function tellMeAboutTheButton(){
+    console.log(this)
+  }
+
+  button1.addEventListener('click', tellMeAboutTheButton)
+  button2.addEventListener('click', tellMeAboutTheButton)
+  
 </script>
 </body>
 
