@@ -33,7 +33,11 @@
   const button2 = document.querySelector('.two')
 
   function tellMeAboutTheButton(){
-    console.log(this)
+    console.log('outisde',this)
+    setTimeout(function(){
+      console.log('inside', this)
+      this.textContent = 'you clicked me'
+    }, 1000)
   }
 
   button1.addEventListener('click', tellMeAboutTheButton)
