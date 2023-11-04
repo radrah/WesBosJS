@@ -19,7 +19,7 @@
   "devDependencies": {
     "babel-eslint": "^9.0.0",
     "cssnano": "^4.1.10",
-    "eslint": "^8.0.1",
+    "eslint": "^8.53.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-config-prettier": "^4.3.0",
     "eslint-config-standard": "^17.1.0",

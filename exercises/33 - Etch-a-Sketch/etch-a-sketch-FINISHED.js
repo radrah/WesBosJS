@@ -24,54 +24,54 @@ ctx.stroke();
 
 // write a draw function
 function draw({ key }) {
-  // increment the hue
-  hue += 1;
-  console.log(hue);
-  ctx.strokeStyle = `hsl(${Math.random() * 360}, 100%, 50%)`;
-  console.log(key);
-  // start the path
-  ctx.beginPath();
-  ctx.moveTo(x, y);
-  // move our x and y values depending on what the user did
-  switch (key) {
-    case 'ArrowUp':
-      y -= MOVE_AMOUNT;
-      break;
-    case 'ArrowRight':
-      x += MOVE_AMOUNT;
-      break;
-    case 'ArrowDown':
-      y += MOVE_AMOUNT;
-      break;
-    case 'ArrowLeft':
-      x -= MOVE_AMOUNT;
-      break;
-    default:
-      break;
-  }
-  ctx.lineTo(x, y);
-  ctx.stroke();
+	// increment the hue
+	hue += 1;
+	console.log(hue);
+	ctx.strokeStyle = `hsl(${Math.random() * 360}, 100%, 50%)`;
+	console.log(key);
+	// start the path
+	ctx.beginPath();
+	ctx.moveTo(x, y);
+	// move our x and y values depending on what the user did
+	switch (key) {
+	case 'ArrowUp':
+		y -= MOVE_AMOUNT;
+		break;
+	case 'ArrowRight':
+		x += MOVE_AMOUNT;
+		break;
+	case 'ArrowDown':
+		y += MOVE_AMOUNT;
+		break;
+	case 'ArrowLeft':
+		x -= MOVE_AMOUNT;
+		break;
+	default:
+		break;
+	}
+	ctx.lineTo(x, y);
+	ctx.stroke();
 }
 
 // write a handler for the keys
 function handleKey(e) {
-  if (e.key.includes('Arrow')) {
-    e.preventDefault();
-    draw({ key: e.key });
-  }
+	if (e.key.includes('Arrow')) {
+		e.preventDefault();
+		draw({ key: e.key });
+	}
 }
 // clear /shke function
 function clearCanvas() {
-  canvas.classList.add('shake');
-  ctx.clearRect(0, 0, width, height);
-  canvas.addEventListener(
-    'animationend',
-    function() {
-      console.log('Done the shake!');
-      canvas.classList.remove('shake');
-    },
-    { once: true }
-  );
+	canvas.classList.add('shake');
+	ctx.clearRect(0, 0, width, height);
+	canvas.addEventListener(
+		'animationend',
+		function() {
+			console.log('Done the shake!');
+			canvas.classList.remove('shake');
+		},
+		{ once: true }
+	);
 }
 
 // listen for arrow keys

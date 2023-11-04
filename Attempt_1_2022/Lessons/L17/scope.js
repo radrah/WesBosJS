@@ -1,4 +1,4 @@
-console.log(`L17: Scope`);
+console.log('L17: Scope');
 
 // const first = 'wes';
 // let second = 'bos';
@@ -6,13 +6,13 @@ console.log(`L17: Scope`);
 //var is attahced to the window
 
 function sayHi(){
-    console.log(`say hi`);
+	console.log('say hi');
 }
 
 const age = 100;
 
 function go (){
-    const hair = 'blonde';
+	const hair = 'blonde';
 }
 
 console.log(age);
@@ -23,32 +23,32 @@ console.log(age);
 //block scoping
 
 function isCool() {
-    let cool;
-    if (1 === 1) {
-        cool = true;
-    }
-    console.log(cool);
-    return cool;
+	let cool;
+	if (1 === 1) {
+		cool = true;
+	}
+	console.log(cool);
+	return cool;
 }
 
 const dog = 'snickers';
 
 function logDog(){
-    console.log(dog);
+	console.log(dog);
 }
 
 function go(){
-    const dog = 'sunny';
-    logDog();
+	const dog = 'sunny';
+	logDog();
 }
 
 go();
 
 function sayHi(name){
-    function yell(){
-        console.log(name.toUpperCase())
-    }
-    yell();
+	function yell(){
+		console.log(name.toUpperCase());
+	}
+	yell();
 }
 
 sayHi('rad');

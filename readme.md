@@ -1,3 +1,7 @@
+# This is a beginner JS, HTML & CSS course from WESBOS that I have done to enhance my Frontend skills
+
+# I opened this repo to enhance my skills in Git & GitHub alongside improving my skills in CLI while doing the course
+
 ![](https://res.cloudinary.com/wesbos/image/upload/v1574876851/BJS/BJS-Social-Share.png)
 
 # Beginner JavaScript

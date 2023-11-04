@@ -1,2 +1,2 @@
-console.log(`L19: Closures`);
+console.log('L19: Closures');
 

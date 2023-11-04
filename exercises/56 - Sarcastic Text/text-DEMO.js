@@ -10,45 +10,45 @@ const funkyLetters = {
 /* eslint-enable */
 
 const filters = {
-  sarcastic(letter, index) {
-    if (index % 2) {
-      return letter.toUpperCase();
-    }
-    return letter.toLowerCase();
-  },
-  funky(letter, index) {
-    // first check if there is a letter in this case
-    let funkyLetter = funkyLetters[letter];
-    console.log(funkyLetter);
-    if (!funkyLetter) {
-      // then check for a lowercase version
-      funkyLetter = funkyLetters[letter.toLowerCase()];
-    }
-    // if we still don't have something, just use the regular letter
-    if (!funkyLetter) {
-      funkyLetter = letter;
-    }
-    return funkyLetter;
-  },
-  unable(letter) {
-    const random = Math.floor(Math.random() * 3);
-    if (letter === ' ' && random === 2) {
-      return '...';
-    }
-    return letter;
-  },
+	sarcastic(letter, index) {
+		if (index % 2) {
+			return letter.toUpperCase();
+		}
+		return letter.toLowerCase();
+	},
+	funky(letter, index) {
+		// first check if there is a letter in this case
+		let funkyLetter = funkyLetters[letter];
+		console.log(funkyLetter);
+		if (!funkyLetter) {
+			// then check for a lowercase version
+			funkyLetter = funkyLetters[letter.toLowerCase()];
+		}
+		// if we still don't have something, just use the regular letter
+		if (!funkyLetter) {
+			funkyLetter = letter;
+		}
+		return funkyLetter;
+	},
+	unable(letter) {
+		const random = Math.floor(Math.random() * 3);
+		if (letter === ' ' && random === 2) {
+			return '...';
+		}
+		return letter;
+	},
 };
 
 function handleInput(text) {
-  const filter = document.querySelector('[name="filter"]:checked').value;
-  const mod = Array.from(text)
-    .map(filters[filter])
-    .join('');
-  result.textContent = mod;
+	const filter = document.querySelector('[name="filter"]:checked').value;
+	const mod = Array.from(text)
+		.map(filters[filter])
+		.join('');
+	result.textContent = mod;
 }
 
 textarea.addEventListener('input', e => handleInput(e.target.value));
 
 filterInputs.forEach(input =>
-  input.addEventListener('input', () => handleInput(textarea.value))
+	input.addEventListener('input', () => handleInput(textarea.value))
 );
