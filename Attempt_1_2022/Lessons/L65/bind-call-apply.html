@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Bind Call and Apply!</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+
+<body>
+  <p>I am consolelog</p>
+  <button class="$"></button>
+  <div class="wrapper">
+    <p>Im a wrapper</p>
+  </div>
+  <script>
+    const person = {
+      name: 'Wes Bos',
+      sayHi: function() {
+        console.log(this)
+        console.log(`Hey ${this.name}`)
+      }
+    }
+
+    const jenna = { name: 'Jenna'}
+
+    const sayHi = person.sayHi.bind(jenna)
+
+    const $ = document.querySelector.bind(document)
+
+    const wrapper = document.querySelector('.wrapper')
+    const p = wrapper.querySelector('p')
+    console.log(p)
+    console.log($('p'))
+
+    const bill = {
+      total: 1000,
+      calculate(taxRate) {
+        return this.total + (this.total * taxRate)
+        },
+      describe(mealType, drinkType, taxRate){
+        return `it was ${mealType} with a ${drinkType} and it was ${this.calculate(taxRate)}`
+      }
+      }
+    
+    const bill2 = {
+      total: 2000
+    }
+
+    const billTotal = bill.calculate(0.13)
+    const calc = bill.calculate.bind(bill2)
+    
+    //arguments after the 1st one in bind, will be used as the arguments for the function
+    const calc2 = bill.calculate.bind({total: 5000}, 0.06)
+    console.log(calc2())
+
+    //use bind to bind a function to an object and call to call the function immediately
+    const calc2Call = bill.calculate.call({total:5000}, 0.3)
+    console.log(calc2Call)
+
+    //apply os the same as call function except for it omly acccepts a single array of arguments
+    const calc2Apply = bill.calculate.apply({total:5000}, [0.9])
+    console.log(calc2Apply)
+
+    const describeAndCall = bill.describe.call(bill, 'lunch', 'soda', 0.1)
+    console.log(describeAndCall)
+
+    const describeAndApply = bill.describe.apply(bill, ['lunch', 'soda', 0.2])
+    
+    console.log(describeAndApply)
+
+  </script>
+</body>
+
+</html>

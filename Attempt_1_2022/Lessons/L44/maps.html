@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Maps</title>
+  <link rel="stylesheet" href="./base.css">
+</head>
+
+<body>
+  <ul class="prize">  </ul>
+  <script>
+    //Maps are basically dictionaries for JS
+    const person1 = {
+      name: 'Westopher',
+      age: 40
+    }
+
+    const myMap = new Map();
+    myMap.set('name', 'rad')
+    myMap.set(111, 'this is a number')
+    myMap.set(person1, 'he is coool')
+
+    const score = 300;
+    const prize = new Map();
+    prize.set(100, 'car');
+    prize.set(200, 'chicken');
+    prize.set(300, 'truck')
+    console.log(`You win a ${prize.get(score)}`)
+
+    const ul = document.querySelector('.prize');
+    for (const [points,prizes] of prize){
+      console.log(points, prizes);
+      const li = `<li>${points} - ${prizes}</li>`;
+      ul.insertAdjacentHTML('beforeend', li);
+    }
+
+  </script>
+</body>
+
+</html>
+
