@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Promises</title>
+  <link rel="stylesheet" href="base.css">
+</head>
+
+<body>
+  <script>
+    function makePizza(toppings = []){
+      const pizzaPromise = new Promise(function(resolve, reject){
+        //when ready, we can resolve the promise
+        const bakingTime = 500 + (toppings.length *200)
+        setTimeout(function(){
+          resolve(`here is your pizza with the toppings, ${toppings.join(', ')}`)
+        }, bakingTime)
+        //if something  goes wrong we can reject the promise
+        
+        });
+      return pizzaPromise;
+      }
+
+    const pizzaWithToppings = makePizza(['pepperoni', 'tomato', 'cheese'])
+    console.log(pizzaWithToppings)
+    
+    console.log('this prints before the then functions)')
+    pizzaWithToppings.then(function(pizza){
+      console.log('then the then functions start')
+      console.log('ahh got it')
+      console.log(pizza)
+    })
+    .then(function(pizza){
+      console.log('this is the 2nd then function')
+      return makePizza(['1', '2', '3', '4', '5', '6', '7', '8', '9'])
+    })
+    .then(function(pizza){
+      console.log(' 3rd and last then function takes a while')
+    })
+    console.log('this prints before the then function even if it is after the then functions')
+
+  </script>
+</body>
+
+</html>
