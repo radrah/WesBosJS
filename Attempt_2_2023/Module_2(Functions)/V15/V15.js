@@ -55,3 +55,55 @@ console.log(makeABaby1('rada', 'wana', 70));
 const makeABaby2 = (first, last, age1) => ({name: `${first} ${last}`, age: age1});
 
 console.log(makeABaby2('rad', 'wan', 40));
+
+// Immediately Invoked Function Expression
+(function() {
+	console.log('Running the Anon function');
+	return 'You are cool';
+})();
+
+(function(age) {
+	console.log('Running the Anon function', age);
+	return 'You are cool';
+})(5);
+
+
+// Methods - Fucntion that lives inside of an object
+// log function lives inside the console object - console.log()
+const wes = {
+	name: 'Wes Bos',
+	sayHi: function() {
+		console.log(`Hey ${this.name}`);
+		return 'hey wes';
+	},
+	// Short hand method
+	yellHi() {
+		console.log('Hey WESSSSSS');
+	},
+	// Arrow Function
+	wisperHi: () => {
+		console.log('I am wispering');
+	},
+};
+
+// Callback function
+//Click callback function
+
+const button = document.querySelector('.clickMe');
+console.log(button);
+
+let counter = 0;
+function handleClick(){
+	counter += 1;
+	console.log(counter);
+	return counter;
+}
+button.addEventListener('click', handleClick);
+button.addEventListener('click', function(){console.log('nice job');});
+
+let count = handleClick();
+
+// Timer Callback
+setTimeout(() => {
+	console.log('Done');
+}, 1000);
