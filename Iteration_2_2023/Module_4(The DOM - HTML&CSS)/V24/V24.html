@@ -1,0 +1,58 @@
+<!-- DOM - Built In & Custom Data Attributes -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>The DOM</title>
+  <link rel="stylesheet" href="../../../base.css">
+</head>
+
+<body>
+    <img class="nice cool" src="https://source.unsplash.com/random/300x300" />
+
+  <div class="items">
+    <img src="https://source.unsplash.com/random/100x100" />
+    <p>Hi I'm a item</p>
+    <div>
+      <h2>
+        Sub Div
+      </h2>
+      <p>Hi I'm a item</p>
+
+    </div>
+    <img  class='item2' src="https://source.unsplash.com/random/200x200" />
+    <p>Hi I'm a item</p>
+    <p>Hi I'm a item</p>
+    <article class="itemA">
+        <h2>
+          I am an Article
+          <span>I am hidden!</span>
+        </h2>
+        <p class="pizza">This is how many pizzas I ate</p>
+    </article>
+  </div>
+
+  <style>
+    h2 span {
+        display: none;
+    }
+
+    img{
+        transition: all 0.2s;
+    }
+
+    .round {
+        border-radius: 50%;
+        transform: rotate(2turn);
+        box-shadow: 0 0 100px black;
+        /* transition: all 0.2s; */
+    }
+  </style>
+
+  <script src="V24.js"></script> <!-- Always chuck the JS src at the end of body to have HTML access it at the end-->
+</body>
+
+</html>
